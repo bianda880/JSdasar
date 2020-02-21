@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cicilan</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script type="text/javascript">
+        count = () => {
+            let nominal = Number(document.getElementById('nominal').value);
+            let periode = Number(document.getElementById('periode').value);
+            let bunga = Number(document.getElementById('bunga').value);
+            let cicilan = (nominal +(nominal*bunga/100))/periode;
+            document.getElementById('cicilan').value = cicilan;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="card col-sm-5">
+            <div class="card-header">
+                <h4>Cicilan</h4>
+            </div>
+            <div class="card-body">
+                Nominal (Rp)
+                <input type="number" id="nominal" class="form-control">
+                Periode (Bulan)
+                <select class="form control" id="periode">
+                    <option>12 </option>
+                    <option>24 </option>
+                    <option>36 </option>
+                </select>
+                <ul></ul>
+                Bunga per tahun (%)
+                <input type="number" id="bunga" class="form-control">
+                <button type="button" class="btn btn-success btn-solid" onclick="count()">
+                    Hitung
+                </button>
+                <ul></ul>
+                Cicilan (Rp)
+                <input type="text" id="cicilan" class="form-control" readonly>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Body Mass Web</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap.js"></script>
+    <script type="text/javascript"> 
+    count = () =>{
+        let berat = document.getElementById('berat').value;
+        let tinggi = document.getElementById('tinggi').value;
+        let hasil = berat/(tinggi * tinggi);
+
+        document.getElementById('hasil').value = hasil;
+    }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="card col-sm-4">
+            <div class="card-header">
+                <h4>Body Mass Index</h4>
+            </div>
+            <div class="card-body">
+                Berat (kg)
+                <input type="number" class="form-control" id="berat">
+                Tinggi (m)
+                <input type="number" class="form-control" id="tinggi">
+                <button type="button" class="btn btn-success btn-solid" onclick="count()">
+                    Hitung
+                </button>
+                <ul></ul>
+                Hasil
+                <input type="text" id="hasil" class="form-control" readonly>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
